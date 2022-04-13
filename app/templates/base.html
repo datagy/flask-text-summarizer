@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Text Summarizer</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>Text Summarizer: <a href="/index">Home</a></div>
+    <hr />
+    {% block content %} {% endblock %}
+  </body>
+</html>
