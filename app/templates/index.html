@@ -1,1 +1,11 @@
-{% extends "base.html" %} {% block content %} Hello world! {% endblock %}
+{% extends "base.html" %} {% block content %} {{ text }}
+<h1>Let's submmarize some text</h1>
+<form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.text.label }}<br />
+    {{ form.text }}
+  </p>
+  <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
