@@ -15,11 +15,11 @@ There's three steps to summarize your text:
 And you're good to go!
 
 ## What this is and what it isn't
-The app lets you:
+The app lets you:\
 ✅ Summarize English-language text\
 ✅ Find the _key_ sentences that best represent the topic of the data\
 ✅ Use simple math through term frequency (with some weighting) to gain and understanding of the text\
 
-The app isn't:
+The app isn't:\
 ❌ An abstractive text summary - meaning it doesn't glean new meaning from the text\
 ❌ The best solution out there (sadly!)\
