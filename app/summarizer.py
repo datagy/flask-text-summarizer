@@ -1,9 +1,11 @@
 import spacy
 from collections import Counter
 
+nlp = spacy.load('en_core_web_sm')
+
 class Summarizer:
-    def __init__(self):
-        self.nlp = spacy.load('en_core_web_sm')
+    def __init__(self, nlp):
+        self.nlp = nlp
 
     def _clean_text(self, text):
         cleaned_text = text.replace('\n', ' ')
