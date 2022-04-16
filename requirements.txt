@@ -7,6 +7,7 @@ cymem==2.0.6
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.2.0/en_core_web_sm-3.2.0-py3-none-any.whl
 Flask==2.1.1
 Flask-WTF==1.0.1
+gunicorn==20.0.4
 idna==3.3
 importlib-metadata==4.11.3
 itsdangerous==2.1.2
