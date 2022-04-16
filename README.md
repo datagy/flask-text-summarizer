@@ -1,6 +1,6 @@
 # Flask Text Summarizer Web App
 
-This app uses a simple extractive NLP method to summarize text. Any English language text can be input and the app will return a summary of three sentences.
+This app uses a simple extractive NLP method to summarize text. Any English language text can be input and the app will return a summary. The app lets you input how long your summary should be and will default to three sentences.
 
 ![Demo Image](/app/images/App_Overview.gif)
 
@@ -23,3 +23,4 @@ The app lets you:\
 The app isn't:\
 ❌ An abstractive text summary - meaning it doesn't glean new meaning from the text\
 ❌ The best solution out there (sadly!)\
+❌ An ordered solution (i.e., the order of the text isn't taken into account), which may result in some odd behavior
