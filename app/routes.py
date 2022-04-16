@@ -11,7 +11,8 @@ def index():
     form = SubmitTextForm(size=600)
     if form.validate_on_submit():
         text = request.form['text']
-        summary = summarizer.summarize_text(text, 3)
+        num_sentences = int(request.form['num_sentences'])
+        summary = summarizer.summarize_text(text, num_sentences)
         return render_template('summary.html',  text=summary)
     return render_template('index.html', text=sample_text, form=form)
 
