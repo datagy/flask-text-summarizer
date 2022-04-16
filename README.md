@@ -2,7 +2,7 @@
 
 This app uses a simple extractive NLP method to summarize text. Any English language text can be input and the app will return a summary of three sentences.
 
-![Demo Image](/app/images/Demo.png)
+![Demo Image](/app/images/App_Overview.png)
 
 ## How Do I Use This Thing?
 
