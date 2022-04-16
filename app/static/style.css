@@ -1,3 +1,7 @@
-body {
-  max-width: 600px;
+.lead {
+  color: aliceblue;
+}
+
+.summary-header {
+  color: aliceblue;
 }
