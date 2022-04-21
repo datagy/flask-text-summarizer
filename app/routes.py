@@ -3,8 +3,6 @@ from app import app
 from app.forms import SubmitTextForm
 from app.summarizer import Summarizer, nlp
 
-sample_text = """Various organisations today, be it online shopping, private sector organisations, government, tourism and catering industry, or any other institute that offers customer services, they are all concerned to learn their customer's feedback each time their services are utilised. Now, consider that these companies are receiving an enormous amount of feedback and data every single day. It becomes quite a tedious task for the management to analyse each of these datapoints and come up with insights. However, we have reached a point in technological advancements where technology can help with the tasks and we ourselves do not need to perform them. One such field that makes this happen is Machine Learning. Machines have become capable of understanding human language with the help of NLP or Natural Language Processing. Today, research is being done with the help of text analytics. One application of text analytics and NLP is Text Summarization. Text Summarization Python helps in summarizing and shortening the text in the user feedback. It can be done with the help of an algorithm that can help in reducing the text bodies while keeping their original meaning intact or by giving insights into their original text."""
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     summarizer = Summarizer(nlp)
@@ -12,9 +10,13 @@ def index():
     if form.validate_on_submit():
         text = request.form['text']
         num_sentences = int(request.form['num_sentences'])
-        summary = summarizer.summarize_text(text, num_sentences)
-        return render_template('summary.html',  text=summary)
-    return render_template('index.html', text=sample_text, form=form)
+        word_weights, sentence_weights, sents, summary = summarizer.summarize_text(text, num_sentences)
+        top_five_words = sorted(word_weights, key=word_weights.get, reverse=True)[:5]
+        sentence_weights = [value for key, value in sentence_weights.items()]
+        weighted_sentence_weights = [value/max(sentence_weights) for value in sentence_weights]
+        sentences_with_weights = list(zip(sents, weighted_sentence_weights))
+        return render_template('summary.html',  text=summary, top_words=top_five_words, sentence_weights=sentence_weights, sents=sentences_with_weights)
+    return render_template('index.html', text='', form=form)
 
 @app.route('/summary')
 def summary():

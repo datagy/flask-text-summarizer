@@ -1,5 +1,16 @@
 {% extends "base.html" %} {% block content %}
 <h1 class="display-5 fw-bold text-white">Let's summarize some text</h1>
+
+<div class="help-text">
+  <h2>How does this work?</h2>
+  Take some text and paste it into the box below. Then select the number of
+  sentences you want included in your summary. The model uses
+  <code>extractive text summarization</code> to generate a summary. This means
+  that the model looks at the most important words in the document and
+  calculates a mathematical representation of the text.
+  <br />
+  <br />
+</div>
 <form action="" method="post" novalidate>
   {{ form.hidden_tag() }}
   <p>
@@ -8,4 +19,5 @@
   <p>{{ form.num_sentences }}</p>
   <p>{{ form.submit(class="btn btn-primary btn-lg px-4 gap-3") }}</p>
 </form>
+
 {% endblock %}

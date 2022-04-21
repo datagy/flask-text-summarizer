@@ -45,4 +45,4 @@ class Summarizer:
         word_weights = self._get_word_weights(doc)
         sentence_weights = self._get_sentence_weights(doc, word_weights)
         summary = self._get_top_n_sentences(sents, sentence_weights, n)
-        return summary
+        return word_weights, sentence_weights, sents, summary
